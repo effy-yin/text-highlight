@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>页面文字选择高亮（支持跨标签高亮）</title>
+<script type="text/javascript" src="jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="textHighlight.js"></script>
+<style type="text/css">
+
+
+::selection {
+	background: #ffb7b7;
+}
+::-moz-selection {
+    background: #ffb7b7; 
+}
+
+.para {
+    background: #eee;
+}
+.yeah {
+    font-weight: bold;
+    color: green;
+}
+
+</style>
+</head>
+<body>
+<div id="wrapper">
+    <input id="key">
+	<input type="button" value="查找" id="btn">
+          
+    <p class="para">作为海淘新手，当你在Amazon商店看到一件自己想买的商品时，如何能够知道这个产品的价格是否优惠，这时就需要一些特殊的小软件或者<span class="yeah">啦啦amazon小插件1234567890</span>来实现，比如说ookong。ookong是一个非常优秀的浏览器插件，可以很方便看到amazon产品的价格走势图，目前支持firefix，chrome，opera，safari四个浏览器。</p>
+
+    <p>123 sample text</p>
+    <p>Some <em>sample</em> text.</p>
+    <div>sample</div>
+    <div>text</div>
+
+
+	<h2>Manipulation</h2>
+	<ul class="children">
+	    <li>Class Attribute</li>
+	    <li>Copying</li>
+	    <li>DOM Insertion, Around</li>
+	    <li>DOM Insertion, Inside</li>
+	    <li>DOM Insertion, Outside</li>
+	    <li>DOM Removal</li>
+	    <li>DOM Replacement</li>
+	    <li>General Attributes</li>
+	    <li>Style Properties</li>
+	</ul>    
+</div>
+      
+<script type="text/javascript">
+$('body').mouseup(function () {
+	textHighlight();
+})
+</script>
+</body>
+</html>
