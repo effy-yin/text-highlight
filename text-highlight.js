@@ -1,14 +1,19 @@
+(function($) {
 
-	function textHighlight() {
-		sel = window.getSelection();
-		anchorNode = sel.anchorNode;
-		focusNode = sel.focusNode;
-		anchorOffset = sel.anchorOffset;
-		focusOffset = sel.focusOffset;
+	'use strict';
+
+	var anchorNode, focusNode;
+
+	function TextHighlight() {
+		var sel = window.getSelection(),			
+			anchorOffset = sel.anchorOffset,
+			focusOffset = sel.focusOffset;
+			anchorNode = sel.anchorNode;
+			focusNode = sel.focusNode;
 
 		// anchorNode 和 focusNode 属于同一个文本节点
 		if(anchorNode === focusNode) {
-			
+
 	        var tc = anchorNode.textContent;
 	        var cs = tc.substring(0, anchorOffset);
 	        var cm = tc.substring(anchorOffset, focusOffset);
@@ -130,8 +135,12 @@
 	            }
 	        }
 	    }
-
 	}
+
+	window.TextHighlight = TextHighlight;
+
+})(jQuery);
+	
 
 
 
