@@ -7,8 +7,8 @@
 
 	function TextHighlight() {
 		var sel = window.getSelection(),
-			anchorNode = sel.anchorNode;
-			focusNode = sel.focusNode;		
+			anchorNode = sel.anchorNode,
+			focusNode = sel.focusNode,
 			anchorOffset = sel.anchorOffset,
 			focusOffset = sel.focusOffset;			
 
@@ -17,7 +17,7 @@
 	        var tc = anchorNode.textContent,
 	        	cs = tc.substring(0, anchorOffset),
 	        	cm = tc.substring(anchorOffset, focusOffset),
-	        	ce = tc.substring(focusOffset);,
+	        	ce = tc.substring(focusOffset),
 	        	newTc = cs+'<span style="background:yellow">'+ cm+'</span>'+ce;
 	        $(anchorNode).replaceWith(newTc);	//////////////////	      
 	    } 
@@ -26,7 +26,7 @@
 	    	
 	    	// 分别获取 anchorNode 和 focusNode 祖先节点
 			var anchorAncestors = findAncestorNodes(anchorNode),
-				focusAncestors = findAncestorNodes(focusNode);
+				focusAncestors = findAncestorNodes(focusNode),
 
 	        	// 找到 anchorNode 和 focusNode 的第一个公共祖先节点
 	        	indexA,
